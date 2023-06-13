@@ -15,7 +15,7 @@ HackDay2023 ESO (ctrl+shift+v to view)
 - paste the location you copied earlier and add "\Scripts" to the end of it
 - click OK until it closes
 
-## Creating the Enviornment
+## Creating the Environment
 - open a command prompt (search cmd in buttom left)
 - cd to the repo's main directory (open github desktop and right click on Hack Day 2023 in top left -> show in explorer) and run the command **conda env create -f eso-env.yml**
 - when environment changes are made in the future, run **conda env update -f eso-env.yml**
