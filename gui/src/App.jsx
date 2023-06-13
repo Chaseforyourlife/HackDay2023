@@ -1,5 +1,7 @@
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import React, {useEffect, useState} from 'react'; //ES6 js
+
 import Test from '/src/components/Test'
-import React from 'react';
 
 export default function App(){
     return(
