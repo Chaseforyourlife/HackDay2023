@@ -1,9 +1,23 @@
-# HackDay2023
-
+# HackDay2023 ESO
 
 # Installing Anaconda 
 
-## [Click her to download installer](https://repo.anaconda.com/archive/Anaconda3-2023.03-1-Windows-x86_64.exe)
+## [Click here to download installer](https://www.anaconda.com/download)
+- while installing, node the folder that you have installed to
+
+## Adding Conda To Path
+- 
+- open your computers environment variables (windows: search in bottom left for "environment variables")
+- click on "Path" under "User Variables"
+- click 
 
 ## Creating the Enviornment
-    - run the command **conda env create -f eso-env.yml**
+- cd to the repo's main directory and run the command **conda env create -f eso-env.yml**
+- when environment changes are made in the future, run **conda env update -f dog-env.yml**
+
+# Installing Node
+
+## [Click here to download installer](https://nodejs.org/en/download)
+
+## Installing the node environment
+- run **npm install** after changing directories into the gui folder
