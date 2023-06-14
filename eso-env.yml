@@ -9,3 +9,4 @@ dependencies:
     - sqlalchemy
     - mysql-connector-python
     - pymysql
+    - numpy
