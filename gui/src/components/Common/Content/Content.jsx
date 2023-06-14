@@ -1,6 +1,7 @@
 import React from 'react';
+import './Content.css'
 
-const Content = () => {
+const Content = (text) => {
     return (
         <div>
             
