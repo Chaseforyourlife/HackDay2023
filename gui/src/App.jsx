@@ -2,6 +2,7 @@ import {BrowserRouter as Router, Routes, Route, NavLink} from 'react-router-dom'
 import React from 'react'; //ES6 js
 import Profile from './pages/Profile/Profile';
 import NavBar from './components/NavBar/NavBar';
+import SearchBar from './components/SearchBar/SearchBar';
 import Home from './pages/Home/Home';
 
 export default function App(){
