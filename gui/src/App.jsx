@@ -2,7 +2,6 @@ import {BrowserRouter as Router, Routes, Route, NavLink} from 'react-router-dom'
 import React from 'react'; //ES6 js
 import Profile from './pages/Profile/Profile';
 import NavBar from './components/NavBar/NavBar';
-import SearchBar from './components/SearchBar/SearchBar';
 import Home from './pages/Home/Home';
 
 export default function App(){
@@ -13,7 +12,7 @@ export default function App(){
                 <header className="App-header" id="App-header">
                     <NavBar/>
                     <Routes>
-                        <Route path="/Home" element={<Home/>}/>
+                        <Route path="/" element={<Home/>}/>
                         <Route path="/Profile" element={<Profile/>}/>
                     </Routes>
                 </header>

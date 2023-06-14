@@ -1,5 +1,6 @@
 import { React, useState } from 'react'
 import './Votes.css'
+import { Card, CardContent } from '@mui/material';
 
 export default function Votes(props) {
 
@@ -15,15 +16,17 @@ export default function Votes(props) {
   }
 
   return (
-    <div>
-      <button
-      onClick={handleUpvote}
-      >Upvote</button>
-      <p>{difference}</p>
-      <button
-      onClick={handleDownvote}
-      >Downvote</button>
-    </div>
+    <Card>
+      <CardContent>
+        <button
+        onClick={handleUpvote}
+        >Upvote</button>
+        <p>{difference}</p>
+        <button
+        onClick={handleDownvote}
+        >Downvote</button>
+      </CardContent>
+    </Card>
   )
 }
 

@@ -6,21 +6,33 @@ import QuestionStats from '../Common/QuestionStats/QuestionStats';
 import Votes from '../Common/Votes/Votes';
 import React from 'react';
 import './Question.css';
+import { Box, Card, CardContent } from '@mui/material'
 
 export default function Question(props) {
   return (
-    <div style={{ border: "solid" }}>
-      <Votes votes={props.questionInfo.votes}/>
+    <Box>
+      <Card variant="outlined">
+        <CardContent>
+          <Box sx={{display: "flex", justifyContent: "flex-start"}}>
+            <Votes votes={props.questionInfo.votes}/>
+            <Card sx={{flexGrow: 1}}>
+              <CardContent>
 
-      <QuestionInfo title={props.questionInfo.title} userInfo={props.questionInfo.userInfo} />
+              <QuestionInfo title={props.questionInfo.title} userInfo={props.questionInfo.userInfo} createdAt={props.questionInfo.createdAt}/>
 
-      <QuestionStats createdAt={props.questionInfo.createdAt}/>
 
-      <Content text={props.questionInfo.content}/>
+              <Content text={props.questionInfo.content}/>
 
-      <TagList tagList={props.questionInfo.tagList}/>
+              <TagList tagList={props.questionInfo.tagList}/>
 
-      <CommentList comments={props.questionInfo.comments}/>
-    </div>
+              <Box>
+                <CommentList comments={props.questionInfo.comments}/>
+              </Box>
+              </CardContent>
+            </Card>
+          </Box>
+        </CardContent>
+      </Card>
+    </Box>
   )
 }

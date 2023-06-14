@@ -2,6 +2,7 @@ import React from 'react';
 import SortQuestionsBar from '../../components/SortQuestionsBar/SortQuestionsBar';
 import Post from '../Post/Post';
 import "./styles.css"
+import { Box } from '@mui/material';
 
 const questionInfo = {
   title: "Test Title",
@@ -99,9 +100,9 @@ const answers = [
 
 export default function Home(){
     return (
-        <div id='home-div'>
+        <Box id='home-div'>
             <SortQuestionsBar/>
             <Post questionInfo={questionInfo} answers={answers}/>
-        </div>
+        </Box>
     );
 }
