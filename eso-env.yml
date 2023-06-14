@@ -5,3 +5,7 @@ dependencies:
   - pip
   - pip:
     - flask
+    - pandas
+    - sqlalchemy
+    - mysql-connector-python
+    - pymysql
