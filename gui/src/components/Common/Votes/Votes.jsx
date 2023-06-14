@@ -1,13 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react'
 
-class Votes extends Component {
-    render() {
-        return (
-            <div>
-                
-            </div>
-        );
-    }
+export default function Votes() {
+  return (
+    <div>Votes</div>
+  )
 }
 
-export default Votes;

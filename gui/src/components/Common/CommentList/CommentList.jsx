@@ -1,13 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react'
 
-class CommentList extends Component {
-    render() {
-        return (
-            <div>
-                
-            </div>
-        );
-    }
+export default function CommentList() {
+  return (
+    <div>CommentList</div>
+  )
 }
 
-export default CommentList;

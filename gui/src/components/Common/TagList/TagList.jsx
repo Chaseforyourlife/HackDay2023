@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class TagList extends Component {
-    render() {
-        return (
-            <div>
-                
-            </div>
-        );
-    }
+const TagList = () => {
+    return (
+        <div>
+            
+        </div>
+    );
 }
 
 export default TagList;
+
