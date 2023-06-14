@@ -7,7 +7,7 @@ import './NavBar.css'
 export default function NavBar() {
   return (
     <nav className = "nav">
-      <a href="/Home" className='site-title'>
+      <a href="/" className='site-title'>
         Home
       </a>
       <ul>
