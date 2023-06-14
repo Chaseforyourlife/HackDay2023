@@ -38,9 +38,9 @@ function CustomLink({ href, children, ...props }) {
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
+  backgroundColor: alpha(theme.palette.common.white, .25),
   '&:hover': {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
+    backgroundColor: alpha(theme.palette.common.white, 1), color: alpha(theme.palette.common.crimson, 1),
   },
   marginLeft: 0,
   width: '100%',
