@@ -1,7 +1,7 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import React, {useEffect, useState} from 'react'; //ES6 js
+import React from 'react'; //ES6 js
 
-import Test from '/src/components/Test'
+import Home from './pages/Home/Home';
 
 export default function App(){
     return(
@@ -10,8 +10,7 @@ export default function App(){
                 <meta httpEquiv="Cache-Control" content=" no-cache, no-store, must-revalidate"></meta>
                 <header className="App-header" id="App-header">
                     <Routes>
-                        {/*<Route path="/" element={<Test/>} />*/}
-                        <Route path="/test_routes" element={<Test/>}/>
+                        <Route path="/Home" element={<Home/>}/>
                     </Routes>
                 </header>
             </div>

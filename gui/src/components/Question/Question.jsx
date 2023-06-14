@@ -1,18 +1,26 @@
-import React from 'react'
-import './Question.css'
+import CommentList from '../Common/CommentList/CommentList';
+import Content from '../Common/Content/Content';
+import TagList from '../Common/TagList/TagList';
+import QuestionInfo from '../Common/QuestionInfo/QuestionInfo';
+import QuestionStats from '../Common/QuestionStats/QuestionStats';
+import Votes from '../Common/Votes/Votes';
+import React from 'react';
+import './Question.css';
 
-export default function Question(title, content, tagList, userInfo, timeStamp, commentList, votes) {
+export default function Question({payload}) {
   return (
     <div>
-      <div id="title-bar">
-        <label>{title}</label>
-        <div>
-          <TimeStamp time={timeStamp}/>
-          <UserTag info={userInfo}/>
-        </div>
+      {/* <Votes votes={payload.votes}/> */}
 
-        <Content text={content}/>
-      </div>
+      {/* <QuestionStats time={payload.timeStamp}/> */}
+
+      {/* <QuestionInfo title={payload.title} userInfo={payload.userInfo} /> */}
+
+      <Content text={payload.content}/>
+
+      {/* <TagList tags={payload.tagList}/> */}
+
+      <CommentList comments={payload.comments}/>
     </div>
   )
 }
