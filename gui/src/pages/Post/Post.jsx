@@ -1,50 +1,14 @@
 import Question from '../../components/Question/Question'
+import AnswerList from '../../components/AnswerList/AnswerList'
 import React from 'react'
 import './Post.css'
 
-const questionInfo = {
-  title: "Test Title",
-  content: "Test content",
-  createdAt: "MM-DD-YYYY",
-  tagList: [
-    {
-      name: "tag1 name",
-      url: "link"
-    },
-    {
-      name: "tag2 name",
-      url: "link"
-    }
-  ],
-  userInfo: {
-    username: "jack",
-    position: "software engineer",
-  },
-  comments: [
-    {
-      content: "comment1",
-      userInfo:  {
-        username: "user1"
-      }
-    },
-    {
-      content: "comment2",
-      userInfo: {
-        username: "user2"
-      }
-    }
-  ],
-  votes: {
-    upvotes: 1,
-    downvotes: 0
-  }
-}
-
-export default function Post() {
+export default function Post(props) {
 
   return (
     <div>
-      <Question questionInfo={questionInfo}/>
+      <Question questionInfo={props.questionInfo}/>
+      <AnswerList answers={props.answers}/>
     </div>
   )
 }

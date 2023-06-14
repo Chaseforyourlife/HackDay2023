@@ -6,7 +6,7 @@ import Votes from '../Common/Votes/Votes';
 
 export default function Answer(props) {
   return (
-    <div>
+    <div style={{ border: "dotted"}}>
       <Votes votes={props.answerInfo.votes}/>
 
       <Content text={props.answerInfo.content}/>
