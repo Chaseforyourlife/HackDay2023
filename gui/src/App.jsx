@@ -13,13 +13,8 @@ export default function App(){
                         {/*<Route path="/" element={<Test/>} />*/}
                         <Route path="/test_routes" element={<Test/>}/>
                     </Routes>
-
                 </header>
             </div>
         </Router>
     )
-
-
-
-
 }
