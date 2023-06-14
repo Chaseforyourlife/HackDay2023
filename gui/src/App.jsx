@@ -10,7 +10,8 @@ export default function App(){
                 <meta httpEquiv="Cache-Control" content=" no-cache, no-store, must-revalidate"></meta>
                 <header className="App-header" id="App-header">
                     <Routes>
-                        <Route path="/" element={<Test/>} />
+                        {/*<Route path="/" element={<Test/>} />*/}
+                        <Route path="/test_routes" element={<Test/>}/>
                     </Routes>
 
                 </header>
