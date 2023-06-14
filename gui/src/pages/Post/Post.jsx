@@ -7,8 +7,12 @@ export default function Post() {
     title: "Test Title",
     content: "Test content",
     tagList: [
-      "tag1",
-      "tag2"
+      {
+        name: "tag1 name"
+      },
+      {
+        name: "tag2 name"
+      }
     ],
     userInfo: {
       username: "jack",

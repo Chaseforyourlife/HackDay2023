@@ -10,7 +10,7 @@ import './Question.css';
 export default function Question({payload}) {
   return (
     <div>
-      {/* <Votes votes={payload.votes}/> */}
+      <Votes votes={payload.votes}/>
 
       {/* <QuestionStats time={payload.timeStamp}/> */}
 
@@ -18,7 +18,7 @@ export default function Question({payload}) {
 
       <Content text={payload.content}/>
 
-      {/* <TagList tags={payload.tagList}/> */}
+      <TagList tags={payload.tagList}/>
 
       <CommentList comments={payload.comments}/>
     </div>

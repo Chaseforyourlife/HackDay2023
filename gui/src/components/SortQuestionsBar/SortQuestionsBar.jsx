@@ -3,6 +3,7 @@ import './SortQuestionsBar'
 
 function handleSortClick(sortType) {
     // call helper with based on sort type
+    
 }
 
 export default function SortQuestionsBar() {
