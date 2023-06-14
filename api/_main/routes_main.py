@@ -7,7 +7,7 @@ blue_main = Blueprint('blue_main',__name__)
 def test_route():
 
     return make_response({
-        'data':['Chase','Leo','Kenny','Lydia']
+        'data':['Chase','Leo','Kenny','Lydia', 'Angelo']
     })
 
 
