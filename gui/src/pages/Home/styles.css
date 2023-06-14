@@ -39,11 +39,13 @@ body {
     padding: .25rem;
 }
 
-.nav li:active {
-    background-color: black;
+.nav li.active {
+    background-color: white;
+    color: maroon;
 }
 
 .nav li:hover {
     background-color: maroon;
+    color: white;
 }
 
