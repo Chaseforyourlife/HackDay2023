@@ -1,8 +1,9 @@
 from flask import Blueprint,make_response, request
 from .functions import *
-from api.db.mysql_functions import read_to_df
+from api.db.mysql_functions import read_to_df, upload_df, send_sql
 #from api.db.mysql_functions import *
 import pandas as pd
+from datetime import datetime
 
 blue_main = Blueprint('blue_main',__name__)
 
@@ -22,23 +23,26 @@ def add_post():
     title = body["title"]
     content = body["content"]
     userID = body["userID"]
-    askedTime = body["askedTime"]
+    askedTime = datetime.utcnow()
 
-    pd.DataFrame = read_to_df("INSERT INTO questions VALUES (?, ?, ?, ?, ?)", (questionID, title, content, userID, askedTime))
-    return make_response({
-        "this worked"
-    })
+    # auto increment questionID
+
+    send_sql(f"INSERT INTO questions VALUES ({questionID}, '{title}', '{content}', {userID}, '{askedTime}')")
+    return "this worked"
 
 @blue_main.route('/add_comment', methods = ["POST"])
 def add_comment():
     body = request.get_json(force = True)
 
-    comemntID = body["commentID"]
+    commentID = body["commentID"]
     questionID = body["questionID"]
     answerID = body["answerID"]
     userID = body["userID"]
     content = body["content"]
     timestamp = body["timestamp"]
+
+    send_sql(f"INSERT INTO comments VALUES ({commentID}, {questionID}, {answerID}, {userID}, '{content}', '{timestamp}')")
+    return "i did something for once"
 
 @blue_main.route('/add_answer', methods = ["POST"])
 def add_answer():
