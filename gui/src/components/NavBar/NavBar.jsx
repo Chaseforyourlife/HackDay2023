@@ -5,7 +5,7 @@ import './NavBar.css'
 export default function NavBar() {
   return (
     <nav className = "nav">
-      <a href="/" className = "navBar">Home</a>
+      <a href="/Home">Home</a>
       <ul>
         <li>
           <a href="/About">Profile</a>
