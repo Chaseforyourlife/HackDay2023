@@ -1,8 +1,8 @@
 import React from 'react'
 import './Tag.css'
 
-export default function Tag(tagInfo) {
+export default function Tag(props) {
   return (
-    <div>Tag: {tagInfo.name}</div>
+    <div>{props.tag.name}</div>
   )
 }

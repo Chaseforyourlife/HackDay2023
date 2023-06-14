@@ -1,9 +1,9 @@
 import { React, useState } from 'react'
 import './Votes.css'
 
-export default function Votes({votes}) {
+export default function Votes(props) {
 
-  const [voteState, setVotes] = useState(votes)
+  const [voteState, setVotes] = useState(props.votes)
   const difference = voteState.upvotes - voteState.downvotes;
   
   function handleUpvote() {

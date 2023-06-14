@@ -1,10 +1,10 @@
 import React from 'react';
 import './Content.css'
 
-const Content = ({text}) => {
+const Content = (props) => {
     return (
         <div>
-            <text>{text}</text>
+            <p>{props.text}</p>
         </div>
     );
 }

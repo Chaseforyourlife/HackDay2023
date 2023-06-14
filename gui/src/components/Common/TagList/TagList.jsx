@@ -2,10 +2,8 @@ import React from 'react';
 import './TagList.css'
 import Tag from '../Tag/Tag';
 
-const TagList = ({tags}) => {
-    return (tags.map((tag) => 
-        <Tag tagInfo={tag}/>
-    ));
+const TagList = (props) => {
+    return (props.tagList.map((tag) => <Tag tag={tag}/> ));
 }
 
 export default TagList;

@@ -1,11 +1,10 @@
 import React from 'react'
 import './Comment.css'
 
-export default function Comment({userName, content}) {
+export default function Comment(props) {
   return (
     <div>
-      <text>{content}</text>
-      <text>{userName}</text>
+      <p>{props.content} - {props.userInfo.username}</p>
     </div>
   )
 }

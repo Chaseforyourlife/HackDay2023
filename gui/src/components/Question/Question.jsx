@@ -7,20 +7,20 @@ import Votes from '../Common/Votes/Votes';
 import React from 'react';
 import './Question.css';
 
-export default function Question({payload}) {
+export default function Question(props) {
   return (
-    <div>
-      <Votes votes={payload.votes}/>
+    <div style={{ border: "solid" }}>
+      <Votes votes={props.questionInfo.votes}/>
 
-      {/* <QuestionStats time={payload.timeStamp}/> */}
+      <QuestionInfo title={props.questionInfo.title} userInfo={props.questionInfo.userInfo} />
 
-      {/* <QuestionInfo title={payload.title} userInfo={payload.userInfo} /> */}
+      <QuestionStats createdAt={props.questionInfo.createdAt}/>
 
-      <Content text={payload.content}/>
+      <Content text={props.questionInfo.content}/>
 
-      <TagList tags={payload.tagList}/>
+      <TagList tagList={props.questionInfo.tagList}/>
 
-      <CommentList comments={payload.comments}/>
+      <CommentList comments={props.questionInfo.comments}/>
     </div>
   )
 }

@@ -5,7 +5,7 @@ import './CommentList.css'
 
 export default function CommentList({comments}) {
   return (comments.map((comment) => 
-      <Comment userName={comment.userName} content={comment.content}/>
+      <Comment userInfo={comment.userInfo} content={comment.content}/>
     )
   )
 }
