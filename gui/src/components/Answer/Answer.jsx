@@ -7,23 +7,19 @@ import { Box, Card, CardContent } from '@mui/material';
 
 export default function Answer(props) {
   return (
-    <Box>
-      <Card variant="outlined">
+    <Box sx={{my: 3}}>
+      <Box sx={{display: "flex", justifyContent:"flex-start"}}>
+
+      <Votes votes={props.answerInfo.votes}/>
+
+      <Card sx={{flexGrow: 1}}>
         <CardContent>
-          <Box sx={{display: "flex", justifyContent:"flex-start"}}>
-
-          <Votes votes={props.answerInfo.votes}/>
-
-          <Card sx={{flexGrow: 1}}>
-            <CardContent>
-              <Content text={props.answerInfo.content}/>
-              <CommentList comments={props.answerInfo.comments}/>
-            </CardContent>
-          </Card>
-
-          </Box>
+          <Content text={props.answerInfo.content}/>
+          <CommentList comments={props.answerInfo.comments}/>
         </CardContent>
       </Card>
+
+      </Box>
     </Box>
   )
 }

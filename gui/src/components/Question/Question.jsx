@@ -10,9 +10,7 @@ import { Box, Card, CardContent } from '@mui/material'
 
 export default function Question(props) {
   return (
-    <Box>
-      <Card variant="outlined">
-        <CardContent>
+    <Box sx={{m: 4}}>
           <Box sx={{display: "flex", justifyContent: "flex-start"}}>
             <Votes votes={props.questionInfo.votes}/>
             <Card sx={{flexGrow: 1}}>
@@ -31,8 +29,6 @@ export default function Question(props) {
               </CardContent>
             </Card>
           </Box>
-        </CardContent>
-      </Card>
     </Box>
   )
 }

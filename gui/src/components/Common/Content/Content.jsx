@@ -1,11 +1,12 @@
 import React from 'react';
 import './Content.css'
+import { Box, Typography } from '@mui/material';
 
 const Content = (props) => {
     return (
-        <div>
-            <p>{props.text}</p>
-        </div>
+        <Box>
+            <Typography variant="p">{props.text}</Typography>
+        </Box>
     );
 }
 
