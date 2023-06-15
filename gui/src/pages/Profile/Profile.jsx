@@ -3,6 +3,7 @@ import { Box, Typography, Grid} from '@mui/material';
 import QuestionList from '../../components/QuestionList/QuestionList';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
+import AnswerList from '../../components/AnswerList/AnswerList';
 
 
 
@@ -44,6 +45,61 @@ const questionInfo = {
       downvotes: 0
     }
   }
+
+  const answers = [
+    {
+        content: "Test answer content 1",
+        createdAt: "MM-DD-YYYY",
+        userInfo: {
+            username: "jack",
+            position: "software engineer",
+        },
+        comments: [
+            {
+                content: "comment1",
+        userInfo:  {
+          username: "user1"
+        }
+      },
+      {
+        content: "comment2",
+        userInfo: {
+          username: "user2"
+        }
+      }
+    ],
+    votes: {
+      upvotes: 2,
+      downvotes: 0
+    }
+  },
+  {
+    content: "Test answer content 2",
+    createdAt: "MM-DD-YYYY",
+    userInfo: {
+      username: "jack",
+      position: "software engineer",
+    },
+    comments: [
+      {
+        content: "comment1",
+        userInfo:  {
+          username: "user1"
+        }
+      },
+      {
+        content: "comment2",
+        userInfo: {
+          username: "user2"
+        }
+      }
+    ],
+    votes: {
+      upvotes: 2,
+      downvotes: 5
+    }
+  }
+]
   
   
   const questions = [ questionInfo, questionInfo, questionInfo ]
@@ -59,7 +115,7 @@ export default function Profile(){
 };
     return (
         <Grid>
-            <Typography>Hello</Typography>
+            <Typography variant = "h3">Put UserName</Typography>
             <React.Fragment>
                 <Tabs value={currentTabIndex} onChange={handleTabChange}>
                     <Tab label='Questions' />
@@ -67,13 +123,22 @@ export default function Profile(){
                 </Tabs>
 
                 {currentTabIndex === 0 && (
-        <Box sx={{ p: 3 }}>
-          <Typography variant='h5'>Questions</Typography>
-          <Typography variant='p'>
-          <QuestionList questions={questions}/>
-          </Typography>
-        </Box>
-      )}
+                    <Box sx={{ p: 3 }}>
+                        <Typography variant='h5'>Questions</Typography>
+                        <Typography variant='p'>
+                            <QuestionList questions={questions}/>
+                        </Typography>
+                    </Box>
+                )}
+
+                {currentTabIndex === 1 && (
+                    <Grid>
+                        <Typography variant='h5'>Answers</Typography>
+                        <Typography variant='p'>
+                            <AnswerList answers={answers}/>
+                        </Typography>
+                    </Grid>
+                )}
             </React.Fragment>
         </Grid>    
     );
