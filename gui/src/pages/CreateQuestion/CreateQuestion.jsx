@@ -24,6 +24,12 @@ const CreateQuestion = () => {
             body: JSON.stringify(body)
          }).catch((e)=> {
             console.error(e);
+         }).then((res) => {
+            if (res.status != "success"){
+                throw new Error("something bad: " + res.status)
+            }
+
+            //handle response
          })
     }
 
