@@ -12,11 +12,9 @@ import {
 } from 'mdb-react-ui-kit';
 
 const QuestionInfo = (props) => {
-    console.log(JSON.stringify(props))
-    console.log(props.questionInfo)
     return (
-        <Box>
-            <Card variant="outlined" classname="card">
+        <Box sx={{my:"4"}}>
+            <Card variant="outlined">
                 <CardContent>
                     <Box>
                         <Typography style={{ fontSize: 20}}>

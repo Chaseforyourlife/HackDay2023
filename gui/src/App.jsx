@@ -4,19 +4,26 @@ import Profile from './pages/Profile/Profile';
 import NavBar from './components/NavBar/NavBar';
 import Home from './pages/Home/Home';
 import Post from './pages/Post/Post'
+import CreateQuestion from './pages/CreateQuestion/CreateQuestion';
+import { Grid } from '@mui/material'
 
 export default function App(){
     return(
         <Router>
-            <div className="App" id="App">
+          <div className="App" id="App">
                 <meta httpEquiv="Cache-Control" content=" no-cache, no-store, must-revalidate"></meta>
                 <header className="App-header" id="App-header">
                     <NavBar/>
-                    <Routes>
-                        <Route path="/" element={<Home/>}/>
-                        <Route path="/Profile" element={<Profile/>}/>
-                        <Route path="/Post" element={<Post questionInfo={questionInfo} answers={answers}/>}/>
-                    </Routes>
+                    <Grid container justifyContent="center">
+                      <Grid item xs={8}>
+                        <Routes>
+                            <Route path="/" element={<Home/>}/>
+                            <Route path="/Profile" element={<Profile/>}/>
+                            <Route path="/Post" element={<Post questionInfo={questionInfo} answers={answers}/>}/>
+                            <Route path="/Create" element={<CreateQuestion/>}/>
+                        </Routes>
+                      </Grid>
+                    </Grid>
                 </header>
             </div>
         </Router>
