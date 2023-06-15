@@ -5,8 +5,11 @@ dependencies:
   - pip
   - pip:
     - flask
+    - flask_session
     - pandas
+    - redis
     - sqlalchemy
     - mysql-connector-python
     - pymysql
     - numpy
+    - secrets
