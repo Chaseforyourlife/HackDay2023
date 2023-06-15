@@ -2,7 +2,7 @@ import React,{useEffect,useState} from 'react';
 import SortQuestionsBar from '../../components/SortQuestionsBar/SortQuestionsBar';
 import QuestionList from '../../components/QuestionList/QuestionList';
 import "./styles.css"
-import { Box } from '@mui/material';
+import { Box, Typography, Button } from '@mui/material';
 
 
 export default function Home(){
@@ -16,7 +16,12 @@ export default function Home(){
   },[])
     return (
     <Box>
-        <SortQuestionsBar/>
+        <Box sx={{display: "flex", justifyContent: "space-between"}}>
+          <Typography>Browse recent questions...</Typography>
+          <a href="/create">
+            <Button sx={{background: "white", color: "red"}}>Or ask your own</Button>
+          </a>
+        </Box>
         <QuestionList questions={questions}/>
     </Box>
     );
