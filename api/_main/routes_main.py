@@ -20,7 +20,7 @@ def test_route():
 def add_post():
     body = request.get_json(force = True)
     
-    userID = session.get('userID')
+    userID = session['userID']
     title = body["title"]
     content = body["content"]
     askedTime = datetime.utcnow()
@@ -41,7 +41,7 @@ def add_comment():
 
     questionID = body["questionID"] or 0
     answerID = body["answerID"] or 0
-    userID = session.get('userID')
+    userID = session['userID']
     content = body["content"]
     timestamp = datetime.utcnow()
 
@@ -59,7 +59,7 @@ def add_answer():
     body = request.get_json(force = True)
 
     answerID = body["answerID"]
-    userID = session.get('userID')
+    userID = session['userID']
     questionID = body["questionID"]
     timeAnswered = datetime.utcnow()
     content = body["content"]
@@ -178,7 +178,7 @@ def unvote():
         return {'status':'error','error':'Invalid unvoteType'}
     
     send_sql(f"""DELETE FROM Votes 
-        WHERE userID={session['userID']} 
+        WHERE userID={session['userID'] or  0} 
         AND questionID={body['contentID'] if unvoteType=='question' else 0} 
         AND commentID={body['contentID'] if unvoteType=='comment' else 0}
         AND answerID={body['contentID'] if unvoteType== 'answer' else 0}

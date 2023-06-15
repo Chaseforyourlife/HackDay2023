@@ -1,4 +1,4 @@
-import { React, useState } from 'react'
+import { React, useEffect, useState } from 'react'
 import './Votes.css'
 import { Card, CardContent, Button, Box } from '@mui/material';
 // import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDownIcon'
@@ -6,15 +6,23 @@ import { Card, CardContent, Button, Box } from '@mui/material';
 export default function Votes(props) {
 
   const [voteState, setVotes] = useState(props.votes)
-  const difference = voteState.upvotes - voteState.downvotes;
-  
-  function handleUpvote() {
-    setVotes((prev) => ({...prev, upvotes: prev.upvotes + 1}));
-    fetch()
+  const [difference,setDifference] = useState(getDifference())
+  function getDifference(){
+    if(voteState.upvotes==null && voteState.downvotes==null){return 0}
+    if(voteState.upvotes==null){return -voteState.downvotes}
+    if(voteState.downvotes==null){return voteState.upvotes}
+    return voteState.upvotes - voteState.downvotes
   }
-
-  function handleDownvote() {
-    setVotes((prev)=> ({...prev, downvotes: prev.downvotes + 1}));
+  
+  const handleVote = async(isUpvote,contentID,voteType) => {
+    //setVotes((prev) => ({...prev, upvotes: prev.upvotes + 1}));
+    let body = {
+      "isUpvote":isUpvote,
+      "contentID":contentID,
+      "voteType":voteType
+    }
+    const data_json = await (await fetch('/api/vote',{method:'POST',body: JSON.stringify(body)})).json()
+    setDifference()
   }
 
   return (
@@ -24,13 +32,13 @@ export default function Votes(props) {
           <Button
           sx={{background: 'red'}}
           variant="contained"
-          onClick={handleUpvote}
+          onClick={e=>handleVote()}
           >Upvote</Button>
           <p>{difference}</p>
           <Button
           sx={{background: 'red'}}
           variant="contained"
-          onClick={handleDownvote}
+          onClick={e=>handleVote()}
           >Downvote</Button>
         </CardContent>
       </Card>
