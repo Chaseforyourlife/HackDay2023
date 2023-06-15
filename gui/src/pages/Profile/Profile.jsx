@@ -3,6 +3,7 @@ import { Box, Typography, Grid} from '@mui/material';
 import QuestionList from '../../components/QuestionList/QuestionList';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
+import AnswerList from '../../components/AnswerList/AnswerList';
 
 
 
@@ -45,64 +46,63 @@ const questionInfo = {
     }
   }
 
-  const answerInfo = [
+  const answers = [
     {
-      content: "Test answer content 1",
-      createdAt: "MM-DD-YYYY",
-      userInfo: {
-        username: "jack",
-        position: "software engineer",
-      },
-      comments: [
-        {
-          content: "comment1",
-          userInfo:  {
-            username: "user1"
-          }
+        content: "Test answer content 1",
+        createdAt: "MM-DD-YYYY",
+        userInfo: {
+            username: "jack",
+            position: "software engineer",
         },
-        {
-          content: "comment2",
-          userInfo: {
-            username: "user2"
-          }
+        comments: [
+            {
+                content: "comment1",
+        userInfo:  {
+          username: "user1"
         }
-      ],
-      votes: {
-        upvotes: 2,
-        downvotes: 0
-      }
-    },
-    {
-      content: "Test answer content 2",
-      createdAt: "MM-DD-YYYY",
-      userInfo: {
-        username: "jack",
-        position: "software engineer",
       },
-      comments: [
-        {
-          content: "comment1",
-          userInfo:  {
-            username: "user1"
-          }
-        },
-        {
-          content: "comment2",
-          userInfo: {
-            username: "user2"
-          }
+      {
+        content: "comment2",
+        userInfo: {
+          username: "user2"
         }
-      ],
-      votes: {
-        upvotes: 2,
-        downvotes: 5
       }
+    ],
+    votes: {
+      upvotes: 2,
+      downvotes: 0
     }
-  ]
+  },
+  {
+    content: "Test answer content 2",
+    createdAt: "MM-DD-YYYY",
+    userInfo: {
+      username: "jack",
+      position: "software engineer",
+    },
+    comments: [
+      {
+        content: "comment1",
+        userInfo:  {
+          username: "user1"
+        }
+      },
+      {
+        content: "comment2",
+        userInfo: {
+          username: "user2"
+        }
+      }
+    ],
+    votes: {
+      upvotes: 2,
+      downvotes: 5
+    }
+  }
+]
   
   
   const questions = [ questionInfo, questionInfo, questionInfo ]
-  const answers = [answerInfo, answerInfo]
 
 
 
@@ -135,7 +135,7 @@ export default function Profile(){
                     <Box sx={{ p: 3 }}>
                         <Typography variant='h5'>Answers</Typography>
                         <Typography variant='p'>
-                            <answerList questions={answers}/>
+                            <AnswerList answers={answers}/>
                         </Typography>
                     </Box>
                 )}
