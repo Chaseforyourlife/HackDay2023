@@ -11,19 +11,19 @@ export default function Question(props) {
   return (
     <Box sx={{m: 4}}>
         <Box sx={{display: "flex", justifyContent: "flex-start"}}>
-          <Votes votes={props.questionInfo.votes}/>
+          <Votes votes={props.questionInfo.voteInfoQuestion}/>
           <Card sx={{flexGrow: 1}}>
             <CardContent>
 
-            <QuestionInfo title={props.questionInfo.title} userInfo={props.questionInfo.userInfo} createdAt={props.questionInfo.createdAt}/>
+            <QuestionInfo questionInfo={props.questionInfo.questionInfo}/>
 
 
-            <Content text={props.questionInfo.content}/>
+            <Content text={props.questionInfo.questionInfo.content}/>
 
-            <TagList tagList={props.questionInfo.tagList}/>
+            <TagList tagList={props.questionInfo.questionInfo.tagList}/>
 
             <Box>
-              <CommentList comments={props.questionInfo.comments}/>
+              <CommentList comments={props.questionInfo.questionComments}/>
             </Box>
             </CardContent>
           </Card>

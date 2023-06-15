@@ -10,3 +10,10 @@
 .MuiCard-root:container {
     padding: 2px 16px;
   }
+
+a{
+    text-decoration:none;
+    color: whitesmoke;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+

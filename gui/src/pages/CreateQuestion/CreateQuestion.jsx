@@ -9,7 +9,7 @@ const CreateQuestion = () => {
 
 
     const handleSubmit = async () => {
-        const url = "http://localhost:5000/api/main/add_post"
+        const url = "/api/main/add_post"
         const body = {
             title: title,
             content: content,

@@ -19,9 +19,9 @@ export default function App(){
                       <Grid item xs={8} sx={{my:2}}>
                         <Routes>
                             <Route path="/" element={<Home/>}/>
-                            <Route path="/Profile" element={<Profile/>}/>
-                            <Route path="/Post" element={<Post questionInfo={questionInfo} answers={answers}/>}/>
-                            <Route path="/Create" element={<CreateQuestion/>}/>
+                            <Route path="/profile" element={<Profile/>}/>
+                            <Route path="/post/:questionID" element={<Post/>}/>
+                            <Route path="/create" element={<CreateQuestion/>}/>
                         </Routes>
                       </Grid>
                     </Grid>

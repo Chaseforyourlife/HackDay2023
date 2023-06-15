@@ -3,20 +3,20 @@ import { Box, Card, CardContent, CardActions, Typography, Button } from '@mui/ma
 import TagList from '../Common/TagList/TagList'
 import "./QuestionCard.css"
 
-const QuestionInfo = (props) => {
+const QuestionCard = (props) => {
     return (
         <Box sx={{my:"4"}}>
-            <Card variant="outlined">
+            <Card variant="outlined" style={{borderRadius: 15}}>
                 <CardContent>
                     <Box>
-                        <Typography style={{fontSize: 30, padding: 20, alight: "right"}}>
+                        <Typography style={{fontSize: 25, alight: "right", borderRadius: 15}}>
                             {props.questionInfo.title}
                         </Typography>
                         <TagList tagList={props.questionInfo.tagList} />
                     </Box>
                 </CardContent>
-                <CardActions style={{justifyContent:"right"}}>
-                  <Button variant="contained" style={{backgroundColor:"red", justifyContent:"right"}}>View Question</Button>
+                <CardActions style={{justifyContent:"right"}} className="round">
+                  <Button variant="contained" style={{backgroundColor:"red"}}><a href={`/post/${props.questionInfo.questionID}`}>View Question</a></Button>
 
                 </CardActions>
             </Card>
@@ -24,4 +24,4 @@ const QuestionInfo = (props) => {
     );
 }
 
-export default QuestionInfo;
+export default QuestionCard;

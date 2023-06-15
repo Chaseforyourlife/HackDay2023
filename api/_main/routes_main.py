@@ -220,7 +220,9 @@ def get_user_posts():
 
 @blue_main.route('/get_post/<questionID>',methods=["GET"])
 def get_post(questionID):
-    questionInfo=read_to_df(f"select * from Questions where questionID = {questionID}").to_dict(orient='records')[0]
+    questionInfo=read_to_df(f"select * from Questions join Users on Questions.userID=Users.userID where Questions.questionID = {questionID}").to_dict(orient='records')[0]
+    tagList = read_to_df(f"Select * from QuestionTags where questionID = {questionID}")["tagName"].to_list()
+    questionInfo["tagList"] = tagList
     voteInfoQuestion = read_to_df(f"SELECT SUM(CASE WHEN isUpvote=1 THEN 1 ELSE 0 END) as numUpvotes,SUM(CASE WHEN isUpvote=0 THEN 1 ELSE 0 END) as numDownvotes from Votes where questionID = {questionID}").to_dict(orient='records')[0]
     questionComments=read_to_df(f"select * from Comments where questionID = {questionID} and answerID = 0").to_dict(orient='records')
     answers = read_to_df(f"select * from Answers where questionID = {questionID}").to_dict(orient='records')

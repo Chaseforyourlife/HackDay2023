@@ -10,12 +10,12 @@ export default function Answer(props) {
     <Box sx={{my: 3}}>
       <Box sx={{display: "flex", justifyContent:"flex-start"}}>
 
-      <Votes votes={props.answerInfo.votes}/>
+      <Votes votes={props.questionInfo.voteInfoAnswers}/>
 
       <Card sx={{flexGrow: 1}}>
         <CardContent>
           <Content text={props.answerInfo.content}/>
-          <CommentList comments={props.answerInfo.comments}/>
+          <CommentList comments={props.answerComments}/>
         </CardContent>
       </Card>
 
