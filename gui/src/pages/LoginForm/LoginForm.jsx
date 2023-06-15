@@ -15,7 +15,7 @@ const LoginForm = () => {
         const res = await( await(fetch(url, {method: "POST", headers:{"Content-Type": "application/json"}, body: JSON.stringify(body)}))).json()
 
         if (res.status === 'success')
-            window.location.url.replace(`/`);
+            window.location.replace(`/`);
         else
             throw new Error("bad login")
     }
@@ -26,7 +26,7 @@ const LoginForm = () => {
                 <CardContent sx={{display: "flex", justifyContent: "space-around"}}>
                     <TextField variant='standard' label="Email" onChange={(v)=>setEmail(v.target.value)}></TextField>
                     <TextField variant='standard' label="Password" onChange={(v)=>setPassword(v.target.value)}></TextField>
-                    <Button variant="contained" sx={{background: "red"}} onClick={handleLogin}>Login</Button>
+                    <Button variant="contained" sx={{background: "red !important"}} onClick={handleLogin}>Login</Button>
                 </CardContent>
                 <CardActions>
                 </CardActions>

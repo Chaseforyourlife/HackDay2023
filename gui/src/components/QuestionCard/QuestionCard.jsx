@@ -16,7 +16,7 @@ const QuestionCard = (props) => {
                     </Box>
                 </CardContent>
                 <CardActions style={{justifyContent:"right"}} className="round">
-                  <Button variant="contained" style={{backgroundColor:"red"}}><a href={`/post/${props.questionInfo.questionID}`}>View Question</a></Button>
+                  <Button variant="contained" style={{backgroundColor:"red !important"}}><a href={`/post/${props.questionInfo.questionID}`}>View Question</a></Button>
 
                 </CardActions>
             </Card>

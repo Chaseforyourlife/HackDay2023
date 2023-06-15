@@ -13,7 +13,8 @@ export default function Post(props){
     setQuestionInfo(data_json)
   }
   useEffect(()=>{
-    getQuestionInfo(questionID)
+    if (questionInfo==null)
+      getQuestionInfo(questionID)
   })
   if(questionInfo==null){
     return(<Box></Box>)

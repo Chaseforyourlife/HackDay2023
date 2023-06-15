@@ -41,7 +41,7 @@ const CreateQuestion = () => {
                     <Box sx={{ display: "flex", flexGrow: 1, justifyContent: "center" }}>
                         <Button 
                         variant="contained"
-                        sx={{background: "red"}}
+                        sx={{background: "red !important"}}
                         onClick={handleSubmit}
                         >Submit</Button>
                     </Box>
