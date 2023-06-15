@@ -1,6 +1,11 @@
-import React from 'react';
-import { Box, Typography} from '@mui/material';
+import React, {useState} from 'react';
+import { Box, Typography, Grid} from '@mui/material';
 import QuestionList from '../../components/QuestionList/QuestionList';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+
+
+
 
 const questionInfo = {
     title: "Test Title",
@@ -46,10 +51,25 @@ const questionInfo = {
 
 
 export default function Profile(){
+    const [currentTabIndex, setCurrentTabIndex] = useState(0);
+ 
+  const handleTabChange = (e, tabIndex) => {
+    console.log(tabIndex);
+    setCurrentTabIndex(tabIndex);
+};
     return (
-        <Box sx = {{}}>
-            <Typography sx = {{ typography: {lg: 'body1',d: 'body2', sm: 'body3'}}}>Put Username Here</Typography>
-            <QuestionList questions = {questions}/>
-        </Box>
+    
+        <Grid>
+            <Typography>Hello</Typography>
+        
+    <React.Fragment>
+      <Tabs value={currentTabIndex} onChange={handleTabChange}>
+        <Tab label='Questions' />
+        <Tab label='Answers' />
+      </Tabs>
+    </React.Fragment>
+
+    </Grid>
+        
     );
 }
