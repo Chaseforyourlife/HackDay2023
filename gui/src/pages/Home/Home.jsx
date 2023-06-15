@@ -20,10 +20,8 @@ export default function Home(props){
           <Typography>Browse recent questions...</Typography>
           {
           props.loggedIn ?
-          <a href="/create">
-            <Button sx={{background: "white", color: "red"}}>Or ask your own</Button>
-          </a>
-          : ""
+          <a href="/create"><Button variant="contained" sx={{background: "white !important", color: "red"}}>Or ask your own</Button></a>
+          : <a href="/login"><Button varianted="contained" sx={{background: "white !important", color:"red"}}>log in to ask</Button></a>
           }
         </Box>
         <QuestionList questions={questions}/>
