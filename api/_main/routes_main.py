@@ -164,10 +164,16 @@ def vote():
             'status':'error',
             'error':"Invalid voteType"
         })
+    send_sql(f"delete from Votes where userID={session['userID']} and questionID = {contentID if voteType=='question' else 0} and answerID = {contentID if voteType=='answer' else 0} and commentID = {contentID if voteType=='comment' else 0}")
     vote_df = pd.DataFrame({'userID':[userID],'questionID':[contentID if voteType=='question' else 0],'answerID':[contentID if voteType=='answer' else 0],'commentID':[contentID if voteType=='comment' else 0],"isUpvote":isUpvote})
     upload_df(vote_df,"Votes")
+    if voteType=='question':
+        upvote_downvote_df = read_to_df(f"select count(CASE WHEN isUpvote=1 THEN 1 ELSE 0 END) as upvotes,count(CASE WHEN isUpvote=0 THEN 1 ELSE 0 END) as downvotes from Votes where {'questionID' if voteType=='question' else 'answerID'}={contentID}")
+    print(upvote_downvote_df)
     return make_response({
-        'status':'success'
+        'status':'success',
+        'upvotes':int(upvote_downvote_df['upvotes'][0]),
+        'downvotes':int(upvote_downvote_df['downvotes'][0]),
     })    
 
 @blue_main.route("/unvote",methods=["POST"])

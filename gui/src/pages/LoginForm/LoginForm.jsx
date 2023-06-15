@@ -28,7 +28,7 @@ const LoginForm = (props) => {
                 <CardContent sx={{display: "flex", justifyContent: "space-around"}}>
                     <TextField variant='standard' label="Email" onChange={(v)=>setEmail(v.target.value)}></TextField>
                     <TextField variant='standard' label="Password" onChange={(v)=>setPassword(v.target.value)}></TextField>
-                    <Button variant="contained" sx={{background: "red"}} onClick={handleLogin}>Login</Button>
+                    <Button variant="contained" sx={{background: "red !important"}} onClick={handleLogin}>Login</Button>
                 </CardContent>
                 <CardActions>
                 </CardActions>
