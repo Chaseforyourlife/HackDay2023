@@ -1,14 +1,21 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import SortQuestionsBar from '../../components/SortQuestionsBar/SortQuestionsBar';
 import QuestionList from '../../components/QuestionList/QuestionList';
 import "./styles.css"
 import { Box } from '@mui/material';
 
 
-
-
 export default function Home(){
-    return (<Box>
+  const [questions,setQuestions] = useState([]);
+  const getQuestions = async() => {
+    const data_json = await (await fetch(`/api/main/get_posts`)).json()
+    setQuestions(data_json.questions)
+  }
+  useEffect(()=>{
+    getQuestions()
+  },[])
+    return (
+    <Box>
         <SortQuestionsBar/>
         <QuestionList questions={questions}/>
     </Box>
@@ -16,17 +23,17 @@ export default function Home(){
 }
 
 
-const questionInfo = {
-    title: "Test Title",
+const questionInfo1 = {
+    title: "How to get access to s.f/dynatrace-test",
     content: "Test content",
-    createdAt: "MM-DD-YYYY",
+    createdAt: "06-14-2023",
     tagList: [
         {
-            name: "tag1 name",
+            name: "dynatrace",
             url: "link"
         },
         {
-            name: "tag2 name",
+            name: "observation-deck-test",
             url: "link"
     }
   ],
@@ -54,7 +61,83 @@ const questionInfo = {
     }
 }
 
-const questions = [ questionInfo, questionInfo, questionInfo]
+const questionInfo2 = {
+  title: "What is an AWS Lambda and where to learn ",
+  content: "Test content",
+  createdAt: "06-14-2023",
+  tagList: [
+      {
+          name: "",
+          url: "link"
+      },
+      {
+          name: "tag2 name",
+          url: "link"
+  }
+],
+userInfo: {
+    username: "jack",
+    position: "software engineer",
+},
+comments: [
+    {
+        content: "comment1",
+        userInfo:  {
+            username: "user1"
+          }
+      },
+      {
+          content: "comment2",
+          userInfo: {
+              username: "user2"
+          }
+      }
+  ],
+  votes: {
+      upvotes: 1,
+      downvotes: 0
+  }
+}
+
+const questionInfo3 = {
+  title: "Query search in Splunk isn't pulling the correct attributes",
+  content: "Test content",
+  createdAt: "06-14-2023",
+  tagList: [
+      {
+          name: "",
+          url: "link"
+      },
+      {
+          name: "tag2 name",
+          url: "link"
+  }
+],
+userInfo: {
+    username: "jack",
+    position: "software engineer",
+},
+comments: [
+    {
+        content: "comment1",
+        userInfo:  {
+            username: "user1"
+          }
+      },
+      {
+          content: "comment2",
+          userInfo: {
+              username: "user2"
+          }
+      }
+  ],
+  votes: {
+      upvotes: 1,
+      downvotes: 0
+  }
+}
+
+const questions = [ questionInfo1, questionInfo2, questionInfo3]
 const answers = [
     {
         content: "Test answer content 1",

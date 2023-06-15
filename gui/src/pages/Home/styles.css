@@ -8,7 +8,11 @@ body {
 
 
 .nav {
+<<<<<<< HEAD
+    background-color: rgba(214, 11, 11, 1);
+=======
     background-color: #F01716;
+>>>>>>> 4961330f374e366c19424502f68d05a375e49720
     color: rgb(255, 255, 255);
     display: flex;
     justify-content: space-between;

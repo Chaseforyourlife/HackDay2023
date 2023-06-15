@@ -9,14 +9,15 @@ const QuestionInfo = (props) => {
             <Card variant="outlined">
                 <CardContent>
                     <Box>
-                        <Typography style={{fontSize: 20}}>
+                        <Typography style={{fontSize: 30, padding: 20, alight: "right"}}>
                             {props.questionInfo.title}
                         </Typography>
                         <TagList tagList={props.questionInfo.tagList} />
                     </Box>
                 </CardContent>
-                <CardActions>
-                    <Button variant="contained" sx={{ background: "red" }}>View Question</Button>
+                <CardActions style={{justifyContent:"right"}}>
+                  <Button variant="contained" style={{backgroundColor:"red", justifyContent:"right"}}>View Question</Button>
+
                 </CardActions>
             </Card>
         </Box>

@@ -6,8 +6,8 @@ import {Box} from '@mui/material';
 export default function QuestionList(props) {
     return (props.questions.map((question) => 
     <>
-        <QuestionCard questionInfo={question}/>
         <br/>
+        <QuestionCard questionInfo={question}/> 
     </>
     ))
 }

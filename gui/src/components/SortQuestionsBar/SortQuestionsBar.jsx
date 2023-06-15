@@ -9,6 +9,7 @@ function handleSortClick(sortType) {
 export default function SortQuestionsBar() {
   return (
     <div>
+      {/*
         <button 
         className='small-btn'
         id="interesting-button"
@@ -32,6 +33,7 @@ export default function SortQuestionsBar() {
         id="month-button"
         onClick={()=> handleSortClick("month")}
         >Month</button>
-    </div>
+        */}
+  </div>
   )
 }

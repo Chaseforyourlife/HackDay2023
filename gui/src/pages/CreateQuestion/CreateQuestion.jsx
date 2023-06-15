@@ -9,6 +9,7 @@ const CreateQuestion = () => {
 
 
     const handleSubmit = async () => {
+        const url = "http://localhost:5000/api/main/add_post"
         if (!title || !content) {
             console.error("Error: In CreateQuestion - handleSubmit: Unable to post with empty title/content.")
             return;
@@ -20,12 +21,8 @@ const CreateQuestion = () => {
             tags: tags
         }
         
-        const url = "http://localhost:5000/add_post"
         const response = await fetch(url, {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
             body: JSON.stringify(body)
          }).catch((e)=> {
             console.error(e);

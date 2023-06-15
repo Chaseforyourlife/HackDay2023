@@ -190,10 +190,19 @@ def unvote():
 @blue_main.route('/get_posts', methods=["GET"])
 def get_posts():
     get_posts_df:pd.DataFrame = read_to_df(f"SELECT * FROM Questions WHERE questionID <> 0")
+    questions = get_posts_df.to_dict(orient='records')
+    tag_df = read_to_df("select * from QuestionTags")
+    tag_df_grouped = tag_df.groupby('questionID')
+    tag_list_dict = {questionID:[] for questionID in read_to_df("select * from Questions")["questionID"].to_list()}
+    for key,group_df in tag_df_grouped:
+        tag_list_dict[key] = group_df['tagName'].to_list()
+    for question in questions:
+        question['tagList'] = tag_list_dict[question['questionID']]
+
     return make_response(
         {
             "status":"success",
-            "questions":get_posts_df.to_dict(orient='records')
+            "questions":questions
         }
     )
 
