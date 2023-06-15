@@ -2,7 +2,7 @@ import React from 'react';
 import SortQuestionsBar from '../../components/SortQuestionsBar/SortQuestionsBar';
 import QuestionList from '../../components/QuestionList/QuestionList';
 import "./styles.css"
-import { Box, Grid } from '@mui/material';
+import { Box } from '@mui/material';
 
 
 
@@ -10,11 +10,7 @@ import { Box, Grid } from '@mui/material';
 export default function Home(){
     return (<Box>
         <SortQuestionsBar/>
-        <Grid container justifyContent="center" sx={{flexGrow: 1}} id='home-div'>
-            <Grid item xs={8} spacing={8}>
-                <QuestionList questions={questions}/>
-            </Grid>
-        </Grid>
+        <QuestionList questions={questions}/>
     </Box>
     );
 }
