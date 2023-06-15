@@ -3,10 +3,8 @@ import { Box, Card, CardContent, CardActions, Typography, Button } from '@mui/ma
 import TagList from '../Common/TagList/TagList'
 
 const QuestionInfo = (props) => {
-    console.log(JSON.stringify(props))
-    console.log(props.questionInfo)
     return (
-        <Box>
+        <Box sx={{my:"4"}}>
             <Card variant="outlined">
                 <CardContent>
                     <Box>

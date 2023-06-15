@@ -10,24 +10,24 @@ import { Box, Card, CardContent } from '@mui/material'
 export default function Question(props) {
   return (
     <Box sx={{m: 4}}>
-          <Box sx={{display: "flex", justifyContent: "flex-start"}}>
-            <Votes votes={props.questionInfo.votes}/>
-            <Card sx={{flexGrow: 1}}>
-              <CardContent>
+        <Box sx={{display: "flex", justifyContent: "flex-start"}}>
+          <Votes votes={props.questionInfo.votes}/>
+          <Card sx={{flexGrow: 1}}>
+            <CardContent>
 
-              <QuestionInfo title={props.questionInfo.title} userInfo={props.questionInfo.userInfo} createdAt={props.questionInfo.createdAt}/>
+            <QuestionInfo title={props.questionInfo.title} userInfo={props.questionInfo.userInfo} createdAt={props.questionInfo.createdAt}/>
 
 
-              <Content text={props.questionInfo.content}/>
+            <Content text={props.questionInfo.content}/>
 
-              <TagList tagList={props.questionInfo.tagList}/>
+            <TagList tagList={props.questionInfo.tagList}/>
 
-              <Box>
-                <CommentList comments={props.questionInfo.comments}/>
-              </Box>
-              </CardContent>
-            </Card>
-          </Box>
+            <Box>
+              <CommentList comments={props.questionInfo.comments}/>
+            </Box>
+            </CardContent>
+          </Card>
+        </Box>
     </Box>
   )
 }
