@@ -5,7 +5,7 @@ const QuestionInfo = (props) => {
     return (
         <Box>
             <Box>
-                <Typography color="text.primary" gutterBottom variant="h5">Title: {props.title}</Typography>
+                <Typography color="text.primary" gutterBottom variant="h5">Title: {props.questionInfo.title}</Typography>
             </Box>
             <Box sx={{display: "flex", justifyContent: "space-between"}}>
                 <Typography color="text.secondary" variant="p">{props.questionInfo.email}</Typography>

@@ -1,7 +1,7 @@
 import { React, useState } from 'react'
 import './Votes.css'
-import { Card, CardContent, Button } from '@mui/material';
-// import { ArrowDropDownIcon } from '@mui/icons-material'
+import { Card, CardContent, Button, Box } from '@mui/material';
+// import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDownIcon'
 
 export default function Votes(props) {
 
@@ -10,6 +10,7 @@ export default function Votes(props) {
   
   function handleUpvote() {
     setVotes((prev) => ({...prev, upvotes: prev.upvotes + 1}));
+    fetch()
   }
 
   function handleDownvote() {
@@ -17,21 +18,23 @@ export default function Votes(props) {
   }
 
   return (
-    <Card>
-      <CardContent sx={{flexDirection: 'column', justifyContent: 'space-between'}}>
-        <Button
-        sx={{background: 'red'}}
-        variant="contained"
-        onClick={handleUpvote}
-        >Upvote</Button>
-        <p>{difference}</p>
-        <Button
-        sx={{background: 'red'}}
-        variant="contained"
-        onClick={handleDownvote}
-        >Downvote</Button>
-      </CardContent>
-    </Card>
+    <Box sx={{display: "flex", flexGrow:1, justifyContent: "space-between"}}>
+      <Card>
+        <CardContent sx={{flexDirection: 'column', justifyContent: 'space-between'}}>
+          <Button
+          sx={{background: 'red'}}
+          variant="contained"
+          onClick={handleUpvote}
+          >Upvote</Button>
+          <p>{difference}</p>
+          <Button
+          sx={{background: 'red'}}
+          variant="contained"
+          onClick={handleDownvote}
+          >Downvote</Button>
+        </CardContent>
+      </Card>
+    </Box>
   )
 }
 
