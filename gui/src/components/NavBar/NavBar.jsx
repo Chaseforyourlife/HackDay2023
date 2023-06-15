@@ -9,7 +9,11 @@ export default function NavBar() {
   return (
     <nav className = "nav">
       <a href="/" className='site-title'>
-        Home
+        <div className='content-block'>
+          <img id='logo-img' src='/StateFarmOverflow.png'/>
+          <div className='space'></div>
+          <h3 id='navbar-title' className=''>Stack Farm Overflow</h3>
+        </div>
       </a>
       <ul>
         <Search> 

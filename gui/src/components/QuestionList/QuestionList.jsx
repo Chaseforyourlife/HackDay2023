@@ -4,9 +4,10 @@ import {Box} from '@mui/material';
 
 
 export default function QuestionList(props) {
-    return (
-    <Box>
-        {props.questions.map((question) => <QuestionCard questionInfo={question}/>)}
-    </Box>
-    );
+    return (props.questions.map((question) => 
+    <>
+        <QuestionCard questionInfo={question}/>
+        <br/>
+    </>
+    ))
 }
