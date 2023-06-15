@@ -198,11 +198,38 @@ def get_posts():
     )
 
 
+@blue_main.route('/get_user_posts', methods =["GET"])
+def get_user_posts():
+    userID = session['userID']
+    get_users_posts_df:pd.DataFrame = read_to_df(f"SELECT * FROM Questions WHERE userID = {userID}")
+    return make_response(
+        {
+            "status":"success",
+            "userPosts": get_users_posts_df.to_dict(orient='records')
+        }
+    )
+
 @blue_main.route('/get_post/<questionID>',methods=["GET"])
 def get_post(questionID):
     questionInfo=read_to_df(f"select * from Questions where questionID = {questionID}").to_dict(orient='records')[0]
+    voteInfoQuestion = read_to_df(f"SELECT SUM(CASE WHEN isUpvote=1 THEN 1 ELSE 0 END) as numUpvotes,SUM(CASE WHEN isUpvote=0 THEN 1 ELSE 0 END) as numDownvotes from Votes where questionID = {questionID}").to_dict(orient='records')[0]
     questionComments=read_to_df(f"select * from Comments where questionID = {questionID} and answerID = 0").to_dict(orient='records')
     answers = read_to_df(f"select * from Answers where questionID = {questionID}").to_dict(orient='records')
+    voteInfoAnswers = read_to_df(f"""
+        SELECT Answers.answerID,SUM(CASE WHEN Votes.isUpvote=1 THEN 1 ELSE 0 END) as numUpvotes,SUM(CASE WHEN Votes.isUpvote=0 THEN 1 ELSE 0 END) as numDownvotes from Votes 
+        join Answers on Votes.answerID=Answers.answerID 
+        where Answers.questionID = {questionID} 
+        and Answers.questionID <> 0
+        group by Answers.answerID
+    """).set_index('answerID').to_dict(orient='index')
+    voteInfoComments = read_to_df(f"""
+        SELECT Comments.commentID,SUM(CASE WHEN Votes.isUpvote=1 THEN 1 ELSE 0 END) as numUpvotes,SUM(CASE WHEN Votes.isUpvote=0 THEN 1 ELSE 0 END) as numDownvotes from Votes 
+        join Comments on Comments.commentID = Votes.commentID 
+        join Answers on Answers.answerID = Comments.answerID 
+        where Answers.questionID = {questionID} 
+        and Comments.commentID <> 0
+        group by Comments.commentID
+    """).set_index('commentID').to_dict(orient='index')
     answerComments_df = read_to_df(f"select * from Comments join Answers on Comments.answerID = Answers.answerID where Answers.questionID = {questionID}")
     answerComments_grouped_df = answerComments_df.groupby('answerID')
     answerComments = {}
@@ -214,5 +241,8 @@ def get_post(questionID):
         'questionInfo':questionInfo,
         'questionComments':questionComments,
         'answers':answers,
-        'answerComments':answerComments
+        'answerComments':answerComments,
+        'voteInfoQuestion':voteInfoQuestion,
+        'voteInfoAnswers':voteInfoAnswers,
+        'voteInfoComments':voteInfoComments
     })
