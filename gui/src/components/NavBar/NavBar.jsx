@@ -4,9 +4,10 @@ import InputBase from '@mui/material/InputBase'
 import TextField from '@mui/material/TextField'
 import './NavBar.css'
 import { CheckBoxOutlineBlankRounded } from '@mui/icons-material'
+import { Button } from '@mui/material'
 
 
-export default function NavBar() {
+export default function NavBar(props) {
   return (
     <nav id='main-nav-bar' className="nav">
       <a href="/" className='site-title'>
@@ -23,7 +24,8 @@ export default function NavBar() {
             inputProps={{ 'aria-label': 'search' }}
           />
         </Search>
-        <CustomLink href='/profile'>Profile</CustomLink>
+        {props.loggedIn ? <CustomLink href='/profile'>Profile</CustomLink> : <a href="/login"><Button variant="contained" sx={{background:"red !important"}}>Log in</Button></a>}
+        
       </ul>
     </nav>
   )

@@ -5,7 +5,7 @@ import "./styles.css"
 import { Box, Typography, Button } from '@mui/material';
 
 
-export default function Home(){
+export default function Home(props){
   const [questions,setQuestions] = useState([]);
   const getQuestions = async() => {
     const data_json = await (await fetch(`/api/main/get_posts`)).json()
@@ -18,9 +18,13 @@ export default function Home(){
     <Box>
         <Box sx={{display: "flex", justifyContent: "space-between"}}>
           <Typography>Browse recent questions...</Typography>
+          {
+          props.loggedIn ?
           <a href="/create">
             <Button sx={{background: "white", color: "red"}}>Or ask your own</Button>
           </a>
+          : ""
+          }
         </Box>
         <QuestionList questions={questions}/>
     </Box>
