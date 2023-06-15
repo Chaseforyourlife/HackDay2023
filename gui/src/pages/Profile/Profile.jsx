@@ -58,18 +58,23 @@ export default function Profile(){
     setCurrentTabIndex(tabIndex);
 };
     return (
-    
         <Grid>
             <Typography>Hello</Typography>
-        
-    <React.Fragment>
-      <Tabs value={currentTabIndex} onChange={handleTabChange}>
-        <Tab label='Questions' />
-        <Tab label='Answers' />
-      </Tabs>
-    </React.Fragment>
+            <React.Fragment>
+                <Tabs value={currentTabIndex} onChange={handleTabChange}>
+                    <Tab label='Questions' />
+                    <Tab label='Answers' />
+                </Tabs>
 
-    </Grid>
-        
+                {currentTabIndex === 0 && (
+        <Box sx={{ p: 3 }}>
+          <Typography variant='h5'>Questions</Typography>
+          <Typography variant='p'>
+          <QuestionList questions={questions}/>
+          </Typography>
+        </Box>
+      )}
+            </React.Fragment>
+        </Grid>    
     );
 }
