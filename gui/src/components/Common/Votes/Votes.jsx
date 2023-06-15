@@ -1,6 +1,7 @@
 import { React, useState } from 'react'
 import './Votes.css'
-import { Card, CardContent } from '@mui/material';
+import { Card, CardContent, Button } from '@mui/material';
+// import { ArrowDropDownIcon } from '@mui/icons-material'
 
 export default function Votes(props) {
 
@@ -17,14 +18,18 @@ export default function Votes(props) {
 
   return (
     <Card>
-      <CardContent>
-        <button
+      <CardContent sx={{flexDirection: 'column', justifyContent: 'space-between'}}>
+        <Button
+        sx={{background: 'red'}}
+        variant="contained"
         onClick={handleUpvote}
-        >Upvote</button>
+        >Upvote</Button>
         <p>{difference}</p>
-        <button
+        <Button
+        sx={{background: 'red'}}
+        variant="contained"
         onClick={handleDownvote}
-        >Downvote</button>
+        >Downvote</Button>
       </CardContent>
     </Card>
   )

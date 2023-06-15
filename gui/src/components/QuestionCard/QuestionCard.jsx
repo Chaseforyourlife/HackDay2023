@@ -3,6 +3,8 @@ import { Box, Card, CardContent, CardActions, Typography, Button } from '@mui/ma
 import TagList from '../Common/TagList/TagList'
 
 const QuestionInfo = (props) => {
+    console.log(JSON.stringify(props))
+    console.log(props.questionInfo)
     return (
         <Box>
             <Card variant="outlined">
@@ -15,7 +17,7 @@ const QuestionInfo = (props) => {
                     </Box>
                 </CardContent>
                 <CardActions>
-                    <Button>View Question</Button>
+                    <Button variant="contained" sx={{background: "red"}}>View Question</Button>
                 </CardActions>
             </Card>
         </Box>

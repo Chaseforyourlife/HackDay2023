@@ -2,7 +2,6 @@ import CommentList from '../Common/CommentList/CommentList';
 import Content from '../Common/Content/Content';
 import TagList from '../Common/TagList/TagList';
 import QuestionInfo from '../Common/QuestionInfo/QuestionInfo';
-import QuestionStats from '../Common/QuestionStats/QuestionStats';
 import Votes from '../Common/Votes/Votes';
 import React from 'react';
 import './Question.css';

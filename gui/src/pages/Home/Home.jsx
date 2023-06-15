@@ -1,6 +1,7 @@
 import React from 'react';
 import SortQuestionsBar from '../../components/SortQuestionsBar/SortQuestionsBar';
 import Post from '../Post/Post';
+import QuestionList from '../../components/QuestionList/QuestionList';
 import "./styles.css"
 import { Box } from '@mui/material';
 
@@ -97,12 +98,15 @@ const answers = [
   }
 ]
 
+const questions = [ questionInfo, questionInfo, questionInfo ]
+
 
 export default function Home(){
     return (
         <Box id='home-div'>
             <SortQuestionsBar/>
-            <Post questionInfo={questionInfo} answers={answers}/>
+            <QuestionList questions={questions}/>
+            {/* <Post questionInfo={questionInfo} answers={answers}/> */}
         </Box>
     );
 }

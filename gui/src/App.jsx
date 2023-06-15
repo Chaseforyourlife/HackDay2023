@@ -3,6 +3,7 @@ import React from 'react'; //ES6 js
 import Profile from './pages/Profile/Profile';
 import NavBar from './components/NavBar/NavBar';
 import Home from './pages/Home/Home';
+import Post from './pages/Post/Post'
 
 export default function App(){
     return(
@@ -14,9 +15,103 @@ export default function App(){
                     <Routes>
                         <Route path="/" element={<Home/>}/>
                         <Route path="/Profile" element={<Profile/>}/>
+                        <Route path="/Post" element={<Post questionInfo={questionInfo} answers={answers}/>}/>
                     </Routes>
                 </header>
             </div>
         </Router>
     )
 }
+
+const questionInfo = {
+  title: "Test Title",
+  content: "Test content",
+  createdAt: "MM-DD-YYYY",
+  tagList: [
+    {
+      name: "tag1 name",
+      url: "link"
+    },
+    {
+      name: "tag2 name",
+      url: "link"
+    }
+  ],
+  userInfo: {
+    username: "jack",
+    position: "software engineer",
+  },
+  comments: [
+    {
+      content: "comment1",
+      userInfo:  {
+        username: "user1"
+      }
+    },
+    {
+      content: "comment2",
+      userInfo: {
+        username: "user2"
+      }
+    }
+  ],
+  votes: {
+    upvotes: 1,
+    downvotes: 0
+  }
+}
+
+const answers = [
+  {
+    content: "Test answer content 1",
+    createdAt: "MM-DD-YYYY",
+    userInfo: {
+      username: "jack",
+      position: "software engineer",
+    },
+    comments: [
+      {
+        content: "comment1",
+        userInfo:  {
+          username: "user1"
+        }
+      },
+      {
+        content: "comment2",
+        userInfo: {
+          username: "user2"
+        }
+      }
+    ],
+    votes: {
+      upvotes: 2,
+      downvotes: 0
+    }
+  },
+  {
+    content: "Test answer content 2",
+    createdAt: "MM-DD-YYYY",
+    userInfo: {
+      username: "jack",
+      position: "software engineer",
+    },
+    comments: [
+      {
+        content: "comment1",
+        userInfo:  {
+          username: "user1"
+        }
+      },
+      {
+        content: "comment2",
+        userInfo: {
+          username: "user2"
+        }
+      }
+    ],
+    votes: {
+      upvotes: 2,
+      downvotes: 5
+    }
+  }
+]
