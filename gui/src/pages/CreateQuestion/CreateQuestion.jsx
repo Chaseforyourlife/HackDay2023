@@ -9,7 +9,7 @@ const CreateQuestion = () => {
 
 
     const handleSubmit = async () => {
-        const url = "http://localhost:5000/add_post"
+        const url = "http://localhost:5000/api/main/add_post"
         const body = {
             title: title,
             content: content,
@@ -18,9 +18,6 @@ const CreateQuestion = () => {
 
         const response = await fetch(url, {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
             body: JSON.stringify(body)
          }).catch((e)=> {
             console.error(e);

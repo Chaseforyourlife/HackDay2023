@@ -11,9 +11,9 @@ export default function Home(){
     const data_json = await (await fetch(`/api/main/get_posts`)).json()
     setQuestions(data_json.questions)
   }
-  useEffect(()=>(
+  useEffect(()=>{
     getQuestions()
-  ),[])
+  },[])
     return (
     <Box>
         <SortQuestionsBar/>
