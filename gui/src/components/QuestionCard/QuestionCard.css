@@ -1,12 +1,11 @@
 .MuiCard-root{
-    box-shadow: 0 4px 8px 0 rgba(23, 74, 203, 0.2);
+    box-shadow: 0 4px 8px 0 rgba(182, 184, 190, 0.2);
     transition: 0.3s;
-    color: green
+
 }
 
 Typography{
-    color:green;
-    background: green
+
 }
 
 .MuiCard-root:hover{

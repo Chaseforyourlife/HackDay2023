@@ -1,9 +1,8 @@
 #tags {
-    background-color: lightblue;
+    background-color: rgba(181, 181, 214, 0.155);
     color: navy;
     width: 100px;
     text-align: center;
-    border-color: gray;
     border-style: solid;
     border-radius: 5px;
 }
