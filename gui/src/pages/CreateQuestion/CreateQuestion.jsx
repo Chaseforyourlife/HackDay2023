@@ -22,11 +22,7 @@ const CreateQuestion = () => {
          }).catch((e)=> {
             console.error(e);
          }).then((res) => {
-            if (res.status != "success"){
-                throw new Error("something bad: " + res.status)
-            }
-
-            //handle response
+            document.location.url.replace(`/post/${res.questionID}`)
          })
     }
 

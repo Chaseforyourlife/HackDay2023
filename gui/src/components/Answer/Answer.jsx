@@ -14,7 +14,7 @@ export default function Answer(props) {
 
       <Card sx={{flexGrow: 1}}>
         <CardContent>
-          <Content text={props.answerInfo.content}/>
+          <Content text={props.questionInfo.answerInfo.content}/>
           <CommentList comments={props.answerComments}/>
         </CardContent>
       </Card>

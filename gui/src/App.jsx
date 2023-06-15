@@ -5,6 +5,7 @@ import NavBar from './components/NavBar/NavBar';
 import Home from './pages/Home/Home';
 import Post from './pages/Post/Post'
 import CreateQuestion from './pages/CreateQuestion/CreateQuestion';
+import LoginForm from './pages/LoginForm/LoginForm';
 import { Grid } from '@mui/material'
 
 export default function App(){
@@ -22,6 +23,7 @@ export default function App(){
                             <Route path="/profile" element={<Profile/>}/>
                             <Route path="/post/:questionID" element={<Post/>}/>
                             <Route path="/create" element={<CreateQuestion/>}/>
+                            <Route path="/login" element={<LoginForm/>}/>
                         </Routes>
                       </Grid>
                     </Grid>
