@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+
+.nav {
+<<<<<<< HEAD
+    background-color: rgba(214, 11, 11, 1);
+=======
+    background-color: #F01716;
+>>>>>>> 4961330f374e366c19424502f68d05a375e49720
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.site-title {
+    font-size: 2rem;
+}
+
+.nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav a {
+    color: inherit;
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: .25rem;
+}
+
+.nav li.active {
+    background-color: white;
+    color: maroon;
+}
+
+.nav li:hover {
+    background-color: maroon;
+    color: white;
+}
+
