@@ -16,7 +16,7 @@ export default function App(){
                     <NavBar/>
                     <hr className='divider'/>
                     <Grid container justifyContent="center">
-                      <Grid item xs={8}>
+                      <Grid item xs={8} sx={{my:2}}>
                         <Routes>
                             <Route path="/" element={<Home/>}/>
                             <Route path="/Profile" element={<Profile/>}/>

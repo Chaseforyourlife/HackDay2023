@@ -1,6 +1,7 @@
-import React from 'react'
+import { React, useState } from 'react'
 import { styled, alpha } from '@mui/material/styles'
-import InputBase from '@mui/material/InputBase';
+import InputBase from '@mui/material/InputBase'
+import TextField from '@mui/material/TextField'
 import './NavBar.css'
 
 
@@ -15,14 +16,13 @@ export default function NavBar() {
         </div>
       </a>
       <ul>
+        <Search> 
+          <StyledInputBase
+            placeholder="Search…"
+            inputProps={{ 'aria-label': 'search' }}
+           />
+        </Search>
         <CustomLink href='/profile'>Profile</CustomLink>
-        <Search>
-              
-              <StyledInputBase
-                placeholder="Search…"
-                inputProps={{ 'aria-label': 'search' }}
-              />
-            </Search>
       </ul>
     </nav>
   )
@@ -59,13 +59,13 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+    paddingLeft: `calc(1em + ${theme.spacing(2)})`,
     transition: theme.transitions.create('width'),
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      width: '12ch',
+      width: '50ch',
       '&:focus': {
-        width: '20ch',
+        width: '75ch',
       },
     },
   },
