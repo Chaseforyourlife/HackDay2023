@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Routes, Route, NavLink} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import React, { useEffect, useState } from 'react'; //ES6 js
 import Profile from './pages/Profile/Profile';
 import NavBar from './components/NavBar/NavBar';

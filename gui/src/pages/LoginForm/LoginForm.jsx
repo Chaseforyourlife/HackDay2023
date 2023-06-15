@@ -1,9 +1,11 @@
+import { useNavigate } from 'react-router-dom';
 import React, {useState} from 'react';
 import {Box, Card, CardContent, CardActions, Button, TextField} from '@mui/material';
 
-const LoginForm = (props) => {
+export default function LoginForm(props) {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
+    const navigate = useNavigate();
 
     const handleLogin = async () => {
         const url = "/api/main/login"
@@ -12,11 +14,18 @@ const LoginForm = (props) => {
             password: password
         }
 
-        const res = await( await(fetch(url, {method: "POST", headers:{"Content-Type": "application/json"}, body: JSON.stringify(body)}))).json()
+        try {
 
+            const res = await( await(fetch(url, {method: "POST", headers:{"Content-Type": "application/json"}, body: JSON.stringify(body)}))).json()
+        } catch (e) {
+            console.error(e)
+        }
+        const res = { status: 'success'}
+        
         if (res.status === 'success') {
+            console.log('login from form');
             props.loginCallback();
-            window.location.replace(`/`);
+            navigate("/");
         }
         else
             throw new Error("bad login")
@@ -36,5 +45,3 @@ const LoginForm = (props) => {
         </Box>
     );
 }
-
-export default LoginForm;

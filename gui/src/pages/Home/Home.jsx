@@ -11,6 +11,8 @@ export default function Home(props){
     const data_json = await (await fetch(`/api/main/get_posts`)).json()
     setQuestions(data_json.questions)
   }
+
+  console.log(props.loggedIn);
   useEffect(()=>{
     getQuestions()
   },[])

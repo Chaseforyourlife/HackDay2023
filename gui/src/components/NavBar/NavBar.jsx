@@ -24,7 +24,8 @@ export default function NavBar(props) {
             inputProps={{ 'aria-label': 'search' }}
           />
         </Search>
-        {props.loggedIn ? <CustomLink href='/profile'>Profile</CustomLink> : <a href="/login"><Button variant="contained" sx={{background:"red !important"}}>Log in</Button></a>}
+        {props.loggedIn ? <CustomLink href='/profile'>Profile</CustomLink> 
+        : <a href="/login"><Button variant="contained" sx={{background:"red !important"}}>Log in</Button></a>}
         
       </ul>
     </nav>
