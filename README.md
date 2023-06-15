@@ -29,5 +29,3 @@ HackDay2023 ESO (ctrl+shift+v to view)
 ## Installing the node environment
 - open a command prompt and cd into the gui folder of the repo
 - run **npm update** after changing directories into the gui folder
-
-testing
