@@ -14,6 +14,7 @@ export default function App(){
                 <meta httpEquiv="Cache-Control" content=" no-cache, no-store, must-revalidate"></meta>
                 <header className="App-header" id="App-header">
                     <NavBar/>
+                    <hr className='divider'/>
                     <Grid container justifyContent="center">
                       <Grid item xs={8}>
                         <Routes>

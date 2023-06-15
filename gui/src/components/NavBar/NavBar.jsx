@@ -6,7 +6,7 @@ import './NavBar.css'
 
 export default function NavBar() {
   return (
-    <nav className = "nav">
+    <nav id='main-nav-bar' className = "nav">
       <a href="/" className='site-title'>
         <div className='content-block'>
           <img id='logo-img' src='/StateFarmOverflow.png'/>
