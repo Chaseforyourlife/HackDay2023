@@ -22,7 +22,7 @@ const CreateQuestion = () => {
          }).catch((e)=> {
             console.error(e);
          }).then((res) => {
-            document.location.url.replace(`/post/${res.questionID}`)
+            document.location.replace(`/post/${res.questionID}`)
          })
     }
 

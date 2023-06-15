@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Box, Card, CardContent, CardActions, Button, TextField} from '@mui/material';
 
-const LoginForm = () => {
+const LoginForm = (props) => {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
 
@@ -14,8 +14,10 @@ const LoginForm = () => {
 
         const res = await( await(fetch(url, {method: "POST", headers:{"Content-Type": "application/json"}, body: JSON.stringify(body)}))).json()
 
-        if (res.status === 'success')
+        if (res.status === 'success') {
+            props.loginCallback();
             window.location.replace(`/`);
+        }
         else
             throw new Error("bad login")
     }

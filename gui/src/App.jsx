@@ -1,5 +1,5 @@
 import {BrowserRouter as Router, Routes, Route, NavLink} from 'react-router-dom';
-import React from 'react'; //ES6 js
+import React, { useEffect, useState } from 'react'; //ES6 js
 import Profile from './pages/Profile/Profile';
 import NavBar from './components/NavBar/NavBar';
 import Home from './pages/Home/Home';
@@ -9,21 +9,27 @@ import LoginForm from './pages/LoginForm/LoginForm';
 import { Grid } from '@mui/material'
 
 export default function App(){
+    const [loggedIn, setLoggedIn] = useState(false);
+
+    function login() {
+      setLoggedIn(true);
+    }
+
     return(
         <Router>
           <div className="App" id="App">
                 <meta httpEquiv="Cache-Control" content=" no-cache, no-store, must-revalidate"></meta>
                 <header className="App-header" id="App-header">
-                    <NavBar/>
+                    <NavBar loggedIn={loggedIn}/>
                     <hr className='divider'/>
                     <Grid container justifyContent="center">
                       <Grid item xs={10} sm={8} sx={{my:2}}>
                         <Routes>
-                            <Route path="/" element={<Home/>}/>
+                            <Route path="/" element={<Home loggedIn={loggedIn}/>}/>
                             <Route path="/profile" element={<Profile/>}/>
                             <Route path="/post/:questionID" element={<Post/>}/>
                             <Route path="/create" element={<CreateQuestion/>}/>
-                            <Route path="/login" element={<LoginForm/>}/>
+                            <Route path="/login" loginCallback={login} element={<LoginForm/>}/>
                         </Routes>
                       </Grid>
                     </Grid>
