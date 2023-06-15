@@ -29,7 +29,7 @@ export default function App(){
                             <Route path="/profile" element={<Profile/>}/>
                             <Route path="/post/:questionID" element={<Post/>}/>
                             <Route path="/create" element={<CreateQuestion/>}/>
-                            <Route path="/login" loginCallback={login} element={<LoginForm/>}/>
+                            <Route path="/login" element={<LoginForm loginCallback={login}/>}/>
                         </Routes>
                       </Grid>
                     </Grid>
