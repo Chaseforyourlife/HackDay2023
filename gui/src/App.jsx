@@ -15,7 +15,7 @@ export default function App(){
                 <header className="App-header" id="App-header">
                     <NavBar/>
                     <Grid container justifyContent="center">
-                      <Grid item xs={8}>
+                      <Grid item xs={8} sx={{my:2}}>
                         <Routes>
                             <Route path="/" element={<Home/>}/>
                             <Route path="/Profile" element={<Profile/>}/>
