@@ -15,7 +15,7 @@ const CreateQuestion = () => {
             content: content,
             tags: tags
         }
-
+        
         const response = await fetch(url, {
             method: "POST",
             body: JSON.stringify(body)
@@ -38,7 +38,7 @@ const CreateQuestion = () => {
                     <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
                         <TextField id="title-input" onChange={(v)=>setTitle(v.target.value)} label="Title.." variant="filled" sx={{my:1}} />
                         <TextField id="content-input" onChange={(v)=>setContent(v.target.value)} label="Question..." variant="outlined" multiline rows={10} sx={{my:1}}/>
-                        <TextField id="tags-input" onChange={(v)=>setTags(v.target.value)} label="Tags..." variant="standard" sx={{my:1}}/>
+                        <TextField id="tags-input" onChange={(v)=>setTags(v.target.value)} label="Optional Tags..." variant="standard" sx={{my:1}}/>
                     </Box>
                 </CardContent>
                 <CardActions>
