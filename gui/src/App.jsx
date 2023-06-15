@@ -8,7 +8,7 @@ import Post from './pages/Post/Post'
 export default function App(){
     return(
         <Router>
-            <div className="App" id="App">
+          <div className="App" id="App">
                 <meta httpEquiv="Cache-Control" content=" no-cache, no-store, must-revalidate"></meta>
                 <header className="App-header" id="App-header">
                     <NavBar/>

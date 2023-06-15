@@ -1,59 +1,75 @@
 import React from 'react';
 import SortQuestionsBar from '../../components/SortQuestionsBar/SortQuestionsBar';
-import Post from '../Post/Post';
 import QuestionList from '../../components/QuestionList/QuestionList';
 import "./styles.css"
-import { Box } from '@mui/material';
+import { Box, Grid } from '@mui/material';
+
+
+
+
+export default function Home(){
+    return (<Box>
+        <SortQuestionsBar/>
+        <Grid container justifyContent="center" sx={{flexGrow: 1}} id='home-div'>
+            <Grid item xs={8} spacing={8}>
+                <QuestionList questions={questions}/>
+            </Grid>
+        </Grid>
+    </Box>
+    );
+}
+
 
 const questionInfo = {
-  title: "Test Title",
-  content: "Test content",
-  createdAt: "MM-DD-YYYY",
-  tagList: [
-    {
-      name: "tag1 name",
-      url: "link"
-    },
-    {
-      name: "tag2 name",
-      url: "link"
+    title: "Test Title",
+    content: "Test content",
+    createdAt: "MM-DD-YYYY",
+    tagList: [
+        {
+            name: "tag1 name",
+            url: "link"
+        },
+        {
+            name: "tag2 name",
+            url: "link"
     }
   ],
   userInfo: {
-    username: "jack",
-    position: "software engineer",
-  },
-  comments: [
-    {
-      content: "comment1",
-      userInfo:  {
-        username: "user1"
-      }
-    },
-    {
-      content: "comment2",
-      userInfo: {
-        username: "user2"
-      }
-    }
-  ],
-  votes: {
-    upvotes: 1,
-    downvotes: 0
-  }
-}
-
-const answers = [
-  {
-    content: "Test answer content 1",
-    createdAt: "MM-DD-YYYY",
-    userInfo: {
       username: "jack",
       position: "software engineer",
-    },
-    comments: [
+  },
+  comments: [
       {
-        content: "comment1",
+          content: "comment1",
+          userInfo:  {
+              username: "user1"
+            }
+        },
+        {
+            content: "comment2",
+            userInfo: {
+                username: "user2"
+            }
+        }
+    ],
+    votes: {
+        upvotes: 1,
+        downvotes: 0
+    }
+}
+
+const questions = [ questionInfo, questionInfo, questionInfo]
+const answers = [
+    {
+        content: "Test answer content 1",
+        createdAt: "MM-DD-YYYY",
+        userInfo: {
+            username: "jack",
+            position: "software engineer",
+        },
+        comments: [
+            {
+                content: "comment1",
         userInfo:  {
           username: "user1"
         }
@@ -97,16 +113,3 @@ const answers = [
     }
   }
 ]
-
-const questions = [ questionInfo, questionInfo, questionInfo ]
-
-
-export default function Home(){
-    return (
-        <Box id='home-div'>
-            <SortQuestionsBar/>
-            <QuestionList questions={questions}/>
-            {/* <Post questionInfo={questionInfo} answers={answers}/> */}
-        </Box>
-    );
-}
