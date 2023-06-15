@@ -115,7 +115,7 @@ export default function Profile(){
 };
     return (
         <Grid>
-            <Typography>Hello</Typography>
+            <Typography variant = "h3">Put UserName</Typography>
             <React.Fragment>
                 <Tabs value={currentTabIndex} onChange={handleTabChange}>
                     <Tab label='Questions' />
@@ -132,12 +132,12 @@ export default function Profile(){
                 )}
 
                 {currentTabIndex === 1 && (
-                    <Box sx={{ p: 3 }}>
+                    <Grid>
                         <Typography variant='h5'>Answers</Typography>
                         <Typography variant='p'>
                             <AnswerList answers={answers}/>
                         </Typography>
-                    </Box>
+                    </Grid>
                 )}
             </React.Fragment>
         </Grid>    
