@@ -19,7 +19,7 @@ const QuestionInfo = (props) => {
             <Card variant="outlined" classname="card">
                 <CardContent>
                     <Box>
-                        <Typography style={{ fontSize: }}>
+                        <Typography style={{ fontSize: 20}}>
                             {props.questionInfo.title}
                         </Typography>
                         <TagList tagList={props.questionInfo.tagList} />
